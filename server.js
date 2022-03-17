@@ -1,9 +1,11 @@
 const path = require("path");
 const express = require("express");
+const serverless = require("serverless-http");
 
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
+const router = express.Router();
 const formatMessage = require("./utils/messages");
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require("./utils/users");
 
@@ -54,8 +56,12 @@ io.on("connection", (socket) => {
   });
 });
 
+app.use(`/.netlify/functions/api`, router);
+
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
   console.log("Server running in : " + PORT);
 });
+
+module.exports.handler = serverless(app);

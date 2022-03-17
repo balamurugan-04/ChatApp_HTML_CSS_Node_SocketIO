@@ -1,0 +1,25 @@
+{
+  "name": "chatapp_html_css_node_socketio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "dev" : "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balamurugan-04/ChatApp_HTML_CSS_Node_SocketIO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balamurugan-04/ChatApp_HTML_CSS_Node_SocketIO/issues"
+  },
+  "homepage": "https://github.com/balamurugan-04/ChatApp_HTML_CSS_Node_SocketIO#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "moment": "^2.29.1",
+    "socket.io": "^4.4.1"
+  }
+}
